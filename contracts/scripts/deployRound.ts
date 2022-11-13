@@ -1,4 +1,4 @@
-import { ethers } from 'hardhat'
+import { ethers, network } from 'hardhat'
 import { Contract, utils } from 'ethers'
 import { Keypair } from 'maci-domainobjs'
 
@@ -9,11 +9,12 @@ import { MaciParameters } from '../utils/maci'
 async function main() {
   console.log('*******************')
   console.log('Deploying a new clr.fund instance of contracts!')
+  console.log('network:', network.name)
   console.log('*******************')
   const [deployer] = await ethers.getSigners()
   console.log('deployer.address: ', deployer.address)
 
-  const circuit = 'prod'
+  const circuit = 'small'
   let maciFactory = await deployMaciFactory(deployer, circuit)
   await maciFactory.deployTransaction.wait()
   console.log('maciFactory.address: ', maciFactory.address)
@@ -114,8 +115,8 @@ async function main() {
   maciFactory = await ethers.getContractAt('MACIFactory', maciFactory.address)
   const maciParameters = await MaciParameters.read(maciFactory)
   maciParameters.update({
-    signUpDuration: 86400 * 14,
-    votingDuration: 86400 * 3,
+    signUpDuration: 42000,
+    votingDuration: 42000,
   })
   const setMaciParametersTx = await fundingRoundFactory.setMaciParameters(
     ...maciParameters.values()

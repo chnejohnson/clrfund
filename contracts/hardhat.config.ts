@@ -10,6 +10,7 @@ import '@nomiclabs/hardhat-etherscan'
 import './tasks'
 
 dotenv.config()
+// dotenv.config({ path: ".env.local" })
 
 const GAS_LIMIT = 20000000
 const WALLET_MNEMONIC = process.env.WALLET_MNEMONIC
@@ -41,6 +42,9 @@ const config: HardhatUserConfig = {
       gasLimit: GAS_LIMIT,
     } as any,
     goerli: {
+      gas: GAS_LIMIT,
+      blockGasLimit: GAS_LIMIT,
+      timeout: 60000,
       url: process.env.JSONRPC_HTTP_URL || 'http://127.0.0.1:8545',
       accounts,
     },
@@ -50,8 +54,10 @@ const config: HardhatUserConfig = {
       accounts,
     },
     'arbitrum-goerli': {
-      url:
-        process.env.JSONRPC_HTTP_URL || 'https://goerli-rollup.arbitrum.io/rpc',
+      gas: GAS_LIMIT,
+      blockGasLimit: GAS_LIMIT,
+      timeout: 60000,
+      url: 'https://goerli-rollup.arbitrum.io/rpc',
       accounts,
     },
     rinkarby: {

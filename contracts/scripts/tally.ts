@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import fs from 'fs'
-import { network, ethers } from 'hardhat'
+import { network, ethers, config } from 'hardhat'
 import { Wallet } from 'ethers'
 import { genProofs, proveOnChain } from 'maci-cli'
 
@@ -24,6 +24,17 @@ async function main() {
     coordinatorPrivKey = process.env.COORDINATOR_PK || ''
     coordinatorEthPrivKey = process.env.COORDINATOR_ETH_PK || ''
   }
+
+  if (!coordinatorEthPrivKey) {
+    const accounts: any = config.networks.hardhat.accounts
+    const index = 0 // first wallet, increment for next wallets
+    const wallet1 = ethers.Wallet.fromMnemonic(
+      accounts.mnemonic,
+      accounts.path + `/${index}`
+    )
+    coordinatorEthPrivKey = wallet1.privateKey
+  }
+
   const coordinator = new Wallet(coordinatorEthPrivKey, ethers.provider)
   const fundingRound = await ethers.getContractAt(
     'FundingRound',

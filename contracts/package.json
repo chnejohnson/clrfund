@@ -14,6 +14,7 @@
     "tally:local": "hardhat run --network localhost scripts/tally.ts",
     "finalize:local": "hardhat run --network localhost scripts/finalize.ts",
     "claim:local": "hardhat run --network localhost scripts/claim.ts",
+    "sleep": "hardhat run --network localhost scripts/timeTravel.ts",
     "test": "hardhat test",
     "e2e": "NODE_OPTIONS=--max-old-space-size=4096 hardhat test --network localhost e2e/index.ts",
     "lint:js": "eslint '{tests,e2e,scripts}/**/*.ts'",
