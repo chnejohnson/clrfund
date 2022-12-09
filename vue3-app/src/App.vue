@@ -118,7 +118,6 @@ const showBreadCrumb = computed(() => {
 	]
 	return !excludedRoutes.includes(routeName.value)
 })
-
 watch(theme, () => {
 	const savedTheme = theme.value
 	document.documentElement.setAttribute('data-theme', savedTheme || getOsColorScheme())
@@ -127,22 +126,20 @@ watch(theme, () => {
 const appReady = ref(false)
 
 onMounted(async () => {
-	console.log('App mounted')
-
 	// to check provider works
 	try {
 		const network = await Promise.race([
 			provider.getNetwork(),
 			new Promise<void>((_, reject) =>
 				setTimeout(() => {
-					reject('Error: cound not detect network: 3 seconds of timed out')
+					reject('time out')
 				}, 3000),
 			),
 		])
+
 		console.log(network)
 	} catch (err) {
-		console.error('Failed to detect network', err)
-		return
+		console.warn('Failed to detect network:', err)
 	}
 
 	try {
@@ -155,8 +152,7 @@ onMounted(async () => {
 		}
 		console.log('roundAddress', roundAddress)
 	} catch (err) {
-		console.error('Failed to get current round', err)
-		return
+		console.warn('Failed to get current round:', err)
 	}
 
 	appReady.value = true
