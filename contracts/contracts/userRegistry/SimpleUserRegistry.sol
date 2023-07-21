@@ -11,7 +11,7 @@ import './IUserRegistry.sol';
  */
 contract SimpleUserRegistry is Ownable, IUserRegistry {
 
-  mapping(address => bool) private users;
+  mapping(address => bool) internal users;
 
   // Events
   event UserAdded(address indexed _user);
@@ -22,6 +22,7 @@ contract SimpleUserRegistry is Ownable, IUserRegistry {
     */
   function addUser(address _user)
     external
+    virtual
     onlyOwner
   {
     require(_user != address(0), 'UserRegistry: User address is zero');
