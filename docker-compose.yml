@@ -1,0 +1,11 @@
+version: '3.6'
+
+services:
+  clrfund:
+    tty: true
+    image: chnejohnson/clrfund:v4.2.3
+    working_dir: /root/clrfund
+    volumes:
+      - ./contracts:/root/clrfund/contracts
+    ports:
+      - '18545:18545'
