@@ -3,7 +3,6 @@
     "source.fixAll": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "eslint.packageManager": "yarn",
   "eslint.validate": [
     "vue",
     "json",
@@ -12,6 +11,6 @@
     "typescript",
     "typescriptreact"
   ],
-  "solidity.compileUsingRemoteVersion": "0.6.4+commit.1dca32f3",
+  "solidity.compileUsingRemoteVersion": "v0.6.12+commit.27d51765",
   "solidity.packageDefaultDependenciesContractsDirectory": ""
 }
