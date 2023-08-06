@@ -63,8 +63,8 @@ async function main() {
   )
   const maciParameters = await MaciParameters.read(maciFactory)
   maciParameters.update({
-    signUpDuration: 60 * 5, // 5 minutes
-    votingDuration: 60 * 5,
+    signUpDuration: 28800000, // 8 hours
+    votingDuration: 28800000, // 8 hours
   })
   const setMaciParametersTx = await factory.setMaciParameters(
     ...maciParameters.values()
