@@ -5,6 +5,7 @@ import dotenv from 'dotenv'
 import { HardhatUserConfig, task } from 'hardhat/config'
 import '@nomiclabs/hardhat-waffle'
 import '@nomiclabs/hardhat-ganache'
+import '@typechain/hardhat'
 import 'hardhat-contract-sizer'
 import '@nomiclabs/hardhat-etherscan'
 import './tasks'
@@ -29,6 +30,11 @@ if (WALLET_PRIVATE_KEY_2) {
 }
 
 const config: HardhatUserConfig = {
+  typechain: {
+    outDir: 'build/typechain/',
+    target: 'ethers-v5',
+    alwaysGenerateOverloads: false,
+  },
   networks: {
     hardhat: {
       gas: GAS_LIMIT,
