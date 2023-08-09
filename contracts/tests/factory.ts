@@ -25,7 +25,7 @@ describe('Funding Round Factory', () => {
   const coordinatorPubKey = new Keypair().pubKey.asContractParam()
 
   beforeEach(async () => {
-    const circuit = 'prod'
+    const circuit = process.env.CIRCUIT_TYPE || 'prod'
     maciFactory = await deployMaciFactory(deployer, circuit)
     maciParameters = await MaciParameters.read(maciFactory)
 
