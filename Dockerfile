@@ -4,8 +4,8 @@ FROM ubuntu:22.04
 RUN apt-get update \
     && apt-get install -y curl wget git jq\
     && apt-get install -y build-essential libgmp-dev libsodium-dev nasm \ 
-    && apt-get install -y libgmp-dev nlohmann-json3-dev nasm g++ \
-    && apt-get install python3 -y
+    && apt-get install -y libgmp-dev nlohmann-json3-dev nasm g++
+# && apt-get install python3 -y
 
 
 # install nvm and nodejs
@@ -26,7 +26,7 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 # install zkutil
 RUN cargo install zkutil --version 0.3.2
 
-RUN npm install -g node-gyp
+# RUN npm install -g node-gyp
 
 # install yarn
 RUN npm install -g yarn
