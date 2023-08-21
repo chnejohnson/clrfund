@@ -1,6 +1,9 @@
 import { ethers } from 'hardhat'
 
-const users = ['0x8647EBFE6586372337342946245ff916EccB0432']
+const users = [
+  '0x8647EBFE6586372337342946245ff916EccB0432',
+  '0x0a42A03AcC76A4F9b9f33a6bcB2fDe7be91e8B21',
+]
 
 async function main() {
   const factoryAddress = process.env.FACTORY_ADDRESS as string

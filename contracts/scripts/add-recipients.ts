@@ -4,7 +4,13 @@ const recipients = [
   {
     address: '0xD9b6FA6B8A585EeE012DC6BdB476e5147dD715E5',
     metadata: {
-      name: 'Macbook Air MetaMask dev-recipient',
+      name: 'My CLR Fun',
+    },
+  },
+  {
+    address: '0xfd300B2fF7Ac475fbb1eBc81456B388bcbB7785C',
+    metadata: {
+      name: 'Vun Dapp',
     },
   },
 ]
