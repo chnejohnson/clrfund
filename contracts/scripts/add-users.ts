@@ -1,8 +1,8 @@
 import { ethers } from 'hardhat'
 
 const users = [
-  '0x8647EBFE6586372337342946245ff916EccB0432',
-  '0x0a42A03AcC76A4F9b9f33a6bcB2fDe7be91e8B21',
+  '0xa6dB498962edb37960750D929DBb963774C6753b', // account 8
+  '0x519E03Ab0579c49bBa69912990F0779c631D2Ef6', // account 9
 ]
 
 async function main() {

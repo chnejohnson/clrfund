@@ -4,7 +4,7 @@ import { ethers } from 'hardhat'
 import { getEventArg } from '../utils/contracts'
 import { getRecipientClaimData } from '../utils/maci'
 
-const recipientIndexes = [1, 2]
+const recipientIndexes = [0, 1, 2, 3, 4, 5]
 
 async function main() {
   const [deployer] = await ethers.getSigners()
