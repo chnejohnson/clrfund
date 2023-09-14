@@ -10,7 +10,37 @@ const recipients = [
   {
     address: '0xfd300B2fF7Ac475fbb1eBc81456B388bcbB7785C',
     metadata: {
-      name: 'Vun Dapp',
+      name: 'Vue Dapp',
+    },
+  },
+  {
+    address: '0x71bE63f3384f5fb98995898A86B02Fb2426c5788',
+    metadata: {
+      name: '11',
+    },
+  },
+  {
+    address: '0xFABB0ac9d68B0B445fB7357272Ff202C5651694a',
+    metadata: {
+      name: '12',
+    },
+  },
+  {
+    address: '0x1CBd3b2770909D4e10f157cABC84C7264073C9Ec',
+    metadata: {
+      name: '13',
+    },
+  },
+  {
+    address: '0xdF3e18d64BC6A983f673Ab319CCaE4f1a57C7097',
+    metadata: {
+      name: '14',
+    },
+  },
+  {
+    address: '0xcd3B766CCDd6AE721141F452C550Ca635964ce71',
+    metadata: {
+      name: '15',
     },
   },
 ]

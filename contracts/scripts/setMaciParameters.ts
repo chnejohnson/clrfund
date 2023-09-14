@@ -3,8 +3,8 @@ import { MaciParameters } from '../utils/maci'
 
 // in seconds
 const duration = {
-  signUpDuration: 600, // 10 min
-  votingDuration: 60, // 1 min
+  signUpDuration: 70000,
+  votingDuration: 60,
 }
 
 async function main() {
